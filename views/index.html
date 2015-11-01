@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='waddup'>
+<head>
+	<title>Waddup Roomies!</title>
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js'></script>
+	<script src='/angular/angular.min.js'></script>	
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js'></script>	
+	<script type="text/javascript" src='/js/controller.js'></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+
+
+<body>
+<div class='container' ng-controller='mainController'>
+<h1> Waddup Roomies!</h1><br><br><br>
+
+<div class='form-group'>
+<form class='form-inline' ng-submit="goOn()">
+	<input type='username' class='form-control' ng-model='user.username' placeholder='Enter your username'> 
+	<input type='password' class='form-control' ng-model='user.password' placeholder='Enter your password'> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	<input type='username' class='form-control' ng-model='user.recipient' placeholder='Enter name of the recipient'> 
+	<input type='submit' value='Go on' class='btn btn-primary'>
+</form>
+</div>
+<br>
+<div class='form-group'>
+<form ng-submit='sendMessage()'>
+	<input type='text' class='form-control' ng-model='newMessage' place='Enter your message'><br>
+	<input type='submit' value='Send' class='btn btn-primary'>
+</form>
+</div>
+
+<div>
+<ul class='list-group'>
+<li ng-repeat="msg in messages" class='list-group-item'>{{msg.message}} <span style='float:right'>{{msg.from}}</span></li>
+</ul>
+</div>
+
+<div>
+
+
+</div>
+
+
+
+
+</div>
+</body>
+</html>
